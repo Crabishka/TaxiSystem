@@ -22,3 +22,7 @@ bool TaxiSystem::Passenger::isRouteRight(Taxi_base *taxi) {
 std::string TaxiSystem::Passenger::getName() {
     return name;
 }
+
+TaxiSystem::Station *TaxiSystem::Passenger::getTarget() {
+    return target;
+}

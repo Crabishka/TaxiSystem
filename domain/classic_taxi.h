@@ -25,12 +25,22 @@ namespace TaxiSystem {
 
         bool addPassenger(TaxiSystem::Passenger *passenger);
 
+        void setStartPoint(Station *station);
+
+        unsigned int getCurrentCount();
+
+        bool canAdd();
+
+        std::list<TaxiSystem::Passenger *> getPassengers();
+
     private:
 
         Station *currentStation;
         const unsigned int capacity;
         TaxiSystem::Route *route;
         std::list<TaxiSystem::Passenger *> passengers;
+
+
     };
 
 

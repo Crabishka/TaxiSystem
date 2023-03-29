@@ -1,7 +1,7 @@
 
 #ifndef UNTITLED_PASSENGER_H
 #define UNTITLED_PASSENGER_H
-#pragma once
+
 
 #include <xstring>
 #include "station.h"
@@ -16,6 +16,8 @@ namespace TaxiSystem {
         bool isRouteRight(Taxi_base *taxi);
 
         std::string getName();
+
+        TaxiSystem::Station *getTarget();
 
     private:
         std::string name;

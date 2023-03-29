@@ -29,12 +29,28 @@ void TaxiSystem::Classic_taxi::move() {
     if (*iter == stations.back()) {
         currentStation = route->getPath().front();
     } else {
-        currentStation = (*iter + 1);
+        currentStation = *(std::next(iter));
     }
 }
 
 TaxiSystem::Station *TaxiSystem::Classic_taxi::getCurrentStation() {
     return currentStation;
+}
+
+void TaxiSystem::Classic_taxi::setStartPoint(TaxiSystem::Station* station){
+    currentStation = station;
+}
+
+unsigned int TaxiSystem::Classic_taxi::getCurrentCount() {
+    return passengers.size();
+}
+
+bool TaxiSystem::Classic_taxi::canAdd() {
+    return capacity - passengers.size();
+}
+
+std::list<TaxiSystem::Passenger *> TaxiSystem::Classic_taxi::getPassengers() {
+    return passengers;
 }
 
 

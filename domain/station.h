@@ -2,7 +2,7 @@
 
 #ifndef UNTITLED_STATION_H
 #define UNTITLED_STATION_H
-#pragma once
+
 
 #include <vector>
 #include <xstring>
@@ -13,13 +13,16 @@ namespace TaxiSystem {
     class Station {
     public:
         ~Station() = default;
-
+        std::string getName();
+        std::list<TaxiSystem::Passenger *> getPassengers();
         explicit Station(const std::string &name);
-
+        bool deletePassenger(Passenger *passenger);
 
     private:
-        std::vector<Passenger *> passengers;
+        std::list<TaxiSystem::Passenger *> passengers;
         std::string name;
+
+
     };
 
 
